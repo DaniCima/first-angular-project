@@ -1,0 +1,6 @@
+<input id="input" type="text" placeholder="Message" [(ngModel)]="message" />
+<p [ngStyle]="{ 'font-size.px': fontSize }">{{ message }}</p>
+<p *ngIf="message.length > 7">Warning message too long!...</p>
+<p *ngIf="fontSize > 30">Warning message too big!...</p>
+<button (click)="increaseSize()">+</button>
+<button (click)="decreaseSize()">-</button>

@@ -1,0 +1,24 @@
+<h1>User list</h1>
+<label>Add new user</label>
+<br />
+<input type="text" placeholder="name" [(ngModel)]="newUser.name" />
+<input type="number" placeholder="age" [(ngModel)]="newUser.age" />
+<input type="text" placeholder="email" [(ngModel)]="newUser.email" />
+<select [(ngModel)]="newUser.gender">
+  <option *ngFor="let gender of genders" [value]="gender">{{ gender }}</option>
+</select>
+
+<button (click)="addUser()">Add</button>
+
+<ul>
+  <li
+    *ngFor="let user of userList; let i = index"
+    [ngClass]="{
+      young: user.age < 18,
+      adult: user.age > 18 && user.age <= 65,
+      elder: user.age > 65
+    }"
+  >
+    {{ user.name }} {{ user.email }}
+  </li>
+</ul>

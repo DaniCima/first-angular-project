@@ -1,0 +1,29 @@
+<!-- home.component.html -->
+
+<h1>Hello {{ name }} {{ lastName }}</h1>
+<h2>This is the HOME page</h2>
+<!-- 
+<input type="text" [placeholder]="message" [(ngModel)]="name" />
+<input type="text" [placeholder]="message" [(ngModel)]="lastName" />
+<button [disabled]="isDisabled" (click)="sayHello()">Submit</button>
+<img [src]="imageUrl" [alt]="imageAltText" (dblclick)="showSecretMessage()" /> -->
+<!-- 
+<h1 (copy)="printMessage()">Hello {{ name }} {{ lastName }}</h1>
+<h2>This is the HOME page</h2> -->
+
+<!-- <input type="text" [placeholder]="message" [value]="name" (keyup)="updateName($event)" > -->
+<input type="text" [placeholder]="message" [(ngModel)]="name" />
+<input type="text" [placeholder]="message" [(ngModel)]="lastName" />
+<button [disabled]="isDisabled" (click)="sayHello()">Submit</button>
+
+<div *ngIf="isPepe()">
+  <p
+    [ngStyle]="{
+      color: 'lawngreen',
+      'font-size.px': secretMessageFontSize,
+      'background-color': secretMessageBackgroundColor
+    }"
+  >
+    This is a secret message
+  </p>
+</div>
